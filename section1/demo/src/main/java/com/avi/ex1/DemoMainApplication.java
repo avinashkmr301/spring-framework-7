@@ -8,10 +8,12 @@ public class DemoMainApplication {
     static void main() {
         IO.println("Hello World!");
 
+        // hard coded bean
         Vehical vehical = new Vehical();
         vehical.setName("Audi 8");
         IO.println("without contex: " + vehical.getName());
 
+        // spring manages bean
         var context = new AnnotationConfigApplicationContext(VehicalConfig.class);
 
         Vehical vehical1 = context.getBean(Vehical.class);
