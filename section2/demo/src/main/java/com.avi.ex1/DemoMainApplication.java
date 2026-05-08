@@ -11,7 +11,7 @@ public class DemoMainApplication {
         vehicle.setName("TATA-SAFARI");
         IO.println(vehicle.getName());
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
         Vehicle bean1 = context.getBean("bmw",Vehicle.class);
         IO.println(bean1.getName());
