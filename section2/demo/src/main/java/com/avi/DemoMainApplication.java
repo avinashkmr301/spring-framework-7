@@ -1,7 +1,9 @@
-package com.avi.ex1;
+package com.avi;
 
-import com.avi.ex1.bean.Vehicle;
-import com.avi.ex1.config.ProjectConfig;
+
+
+import com.avi.ex3.bean.Vehicle;
+import com.avi.ex3.bean.config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class DemoMainApplication {
@@ -13,14 +15,11 @@ public class DemoMainApplication {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        Vehicle bean1 = context.getBean("bmw",Vehicle.class);
-        IO.println(bean1.getName());
-
-        Vehicle bean = (Vehicle) context.getBean("xuv");
+        Vehicle bean = context.getBean(Vehicle.class);   // it will take @Primary bean
         IO.println(bean.getName());
 
-        Vehicle bean2 = (Vehicle) context.getBean("audi",Vehicle.class);
-        IO.println(bean2.getName());
+        bean.sayHello();
+
 
 
 
